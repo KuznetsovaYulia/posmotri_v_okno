@@ -18,6 +18,7 @@ html {
   font-size: 18px;
   color: #fff;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -73,7 +74,7 @@ ol {
   gap: 26px;
 }
 
-/* Список городов с миниатюрами*/
+/* Список городов с миниатюрами */
 .content__list {
   height: 298px;
   overflow-y: auto;
@@ -92,31 +93,28 @@ ol {
   color: #fff;
 }
 
-/* Карточка-ссылка_фокус */
+/* Подчеркивание заголовка и текста в карточке при наведении курсора */
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
 .content__card-link:focus {
   border: 1px solid #fff;
-  
 }
-
-/* Карточка-ссылка_видна в фокусе */
-.content__card-link:focus-visible {
+.content__card-link_current:active {
+  border: none;
   outline: none;
 }
-
-/* Карточка-ссылка_активна */
+/* Карточка-ссылка активна */
 .content__card-link:active {
   background: #545050;
-}
-
-/* Подчеркивание заголовка и текста в карточке при наведении курсора */
-.content__card-link:hover .content__video-card-title,
-.content__card-link:hover .content__video-card-description {
-  text-decoration: underline;
+  text-decoration:none;
 }
 
 /* Карточка-ссылка_текущая */
 .content__card-link_current {
-  outline: none;
+  text-decoration: none;
+  border: none;
 }
 
 /* Карточка c видео миниатюрой*/
@@ -124,7 +122,7 @@ ol {
   display: flex;
 }
 
-/*заголовок карточки с видео_миниатюрой*/
+/* заголовок карточки с видео_миниатюрой */
 .content__video-card-title {
   font-family: Oswald, sans-serif;
   font-size: 30px;
@@ -133,7 +131,7 @@ ol {
   text-transform: uppercase;
 }
 
-/* описание карточки с видео_миниатюрой*/
+/* описание карточки с видео_миниатюрой */
 .content__video-card-description-container {
   max-width: 200px;
   display: flex;
@@ -153,10 +151,6 @@ ol {
   width: 194px;
   height: 103px;
   margin-left: auto;
-  -o-object-position: 50% 50%;
-  object-position: 50% 50%;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 
 /* Скрываем элементы */
@@ -185,49 +179,49 @@ ol {
   color: #fff;
 }
 
-/*Кнопка_Найти*/
+/* Кнопка_Найти */
 .search-form__submit-button {
   width: 194px;
   align-self: flex-end;
 }
 
-/*Кнопка_Показать еще*/
+/* Кнопка_Показать еще */
 .more-button {
   width: 399px;
 }
 
-/*кнопка при клике*/
+/* Наведение курсора */
+.button:hover {
+  text-decoration:underline;
+}
+
+/* Кнопка при клике */
 .button:focus {
-  outline: none;
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
 
-/*Активная кнопка*/
+/* Активная кнопка */
 .button:active {
-  border: 1px solid #fff;
   background: #545050;
+  outline: none;
+  text-decoration: none;
 }
 
-/*Наведение курсора*/
-.button:hover {
-  text-decoration: underline; 
-}
-
-/*Шаблон для разметки*/
+/* Шаблон для разметки */
 .cards-list-item-template {
   display: flex;
   flex-direction: column;
 }
 
-/* Контейнер для видео и формы поиска*/
+/* Контейнер для видео и формы поиска */
 .result {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* Видео подстраивается под заданные размеры*/
+/* Видео подстраивается под заданные размеры */
 .result__video {
   width: 100%;
   height: 100%;
@@ -251,10 +245,10 @@ ol {
 /* Форма поиска_набор полей */
 .search-form__fieldset {
   width: fit-content;
+  border: none;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  border: none;
 }
 
 /* Заголовки в форме поиска */
@@ -268,9 +262,7 @@ ol {
 .search-form__textfield {
   width: 224px;
   background: none;
-  outline: none;
   border: none;
-  appearance: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -287,15 +279,32 @@ ol {
   gap: 5px;
 }
 
-/* Подчеркивание при наведении в форме поиска */
-.search-form__label:hover .search-form__label-text {
+/* Подчеркивание при наведении */
+.search-form__checkbox-list:hover {
   text-decoration: underline;
 }
 
-/* Подчеркивание формы ввода города при клике*/
-.search-form__label :has(:focus-visible) {
+.search-form__textfield:focus {
   outline: 1px solid #fff;
   outline-offset: 2px;
+}
+
+/* Подчеркивание при клике */
+.search-form__label:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__pseudo-checkbox:active {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+  border: 1px solid #fff;
+  background-color: #FFF;
+}
+
+/* удержание на элементе */
+.search-form__label:active {
+  border: none;
 }
 
 /* обертка, чтобы выстроить чекбоксы в линию */
@@ -304,7 +313,7 @@ ol {
   gap: 15px;
 }
 
-/* квадрат внутри при нажатии чекбокса */
+/* квадрат при нажатии чекбокса */
 .search-form__pseudo-checkbox {
   width: 19px;
   height: 19px;
