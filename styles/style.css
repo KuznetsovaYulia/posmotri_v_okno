@@ -43,6 +43,7 @@ ol {
 
 /* Контейнер с основным содержимым */
 .content {
+  min-width: 399px;
   display: flex;
   align-items: end;
   gap: 30px; /* расстояние между контейнером результата и блоком со списком городов */
@@ -64,7 +65,7 @@ ol {
 }
 
 /* Контейнер с подробностями сбоку */
-.content__details {
+.content__details { 
   width: 399px;
   display: flex;
   flex-direction: column;
@@ -74,8 +75,8 @@ ol {
 
 /* Список городов с миниатюрами */
 .content__list {
-  padding-bottom: 6px; /* чтобы кнопка поместилась и появилась вторая линия */
-  height: 298px;
+  padding-bottom: 3px;/* чтобы кнопка поместилась и появилась вторая линия */ 
+  height: 298px; 
   overflow-y: auto;
   position: relative;
   display: flex;
@@ -139,7 +140,7 @@ ol {
 
 /* описание карточки с видео_миниатюрой */
 .content__video-card-description-container {
-  padding: 4px 0; /*отступы для текста и заголовка в карточке*/
+  padding: 4px 0; /*отступы для текста и заголовка в карточке*/ 
   width: 200px;
   display: flex;
   flex-direction: column;
@@ -199,7 +200,7 @@ ol {
 
 /* Кнопка_Показать еще */
 .more-button {
-  width: 399px;
+  width: 399px; 
 }
 
 /* Наведение курсора */
